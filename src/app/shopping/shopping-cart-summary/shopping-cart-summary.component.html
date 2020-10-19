@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Order Summary</h5>
+      <p class="card-text">You have {{ cart.totalIemCount}} items in your shopping cart.</p>
+      <ul class="list-group list-group-flush">
+          <li *ngFor="let item of cart.items" class="list-group-item">
+              {{ item.quantity}} * {{ item.title}}
+              <div class="float-right">
+                  {{ item.totalPrice | currency:'ZAR ':true}}
+              </div>
+          </li>
+          <li class="list-group-item font-weight-bold">
+              Total
+              <div class="float-right">
+                  {{ cart.totalPrice | currency :'ZAR ': true}}
+              </div>
+          </li>
+
+          <li *ngFor="let item of cart.items" class="list-group-item">
+            <div class="float-right">
+                <a href="https://www.payfast.co.za/eng/process?cmd=_paynow&amp;receiver=16517001&amp;item_name={{item.title}}&amp;amount={{ item.totalPrice }}"><img src="https://www.payfast.co.za/images/buttons/light-small-paynow.png" width="165" height="36" alt="Pay" title="Pay Now with PayFast" /></a>
+            </div>
+        </li>
+          
+      </ul>
+    </div>
+
+
+
+  </div>

@@ -1,0 +1,6 @@
+<h2>Payments</h2>
+<div class="row" *ngIf="cart$ | async as cart">
+    
+<div class="col-10">
+    <shopping-cart-summary [cart]="cart"></shopping-cart-summary>
+</div>
